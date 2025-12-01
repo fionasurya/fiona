@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiona - Networking Student</title>
+    <link rel="stylesheet" href="f/f.css">
+</head>
+<body>
+    <!-- Canvas untuk efek matrix -->
+    <canvas id="matrix"></canvas>
+
+    <!-- Button Spotify di pojok kiri atas -->
+    <div class="spotify-btn-container">
+        <button id="spotify-btn" class="spotify-btn">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-2-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About Me</a></li>
+            <li><a href="#skill" class="nav-link">Skill</a></li>
+            <li><a href="#sertifikat" class="nav-link">Sertifikat</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#contact" class="nav-link">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Halaman Home -->
+    <section id="home" class="page active">
+        <div class="home-content">
+            <h1 id="typed-text"></h1>
+            <p class="subtitle">XI TKJ 1 — Networking Student</p>
+            <p class="tagline">"Exploring networks & building creative tech projects."</p>
+            <a href="f/cv.jpg" download="CV_Fiona_Surya_Suci_Ramadhani.jpg" class="download-btn">Download CV</a>
+        </div>
+    </section>
+
+   <!-- Halaman About Me -->
+<section id="about" class="page">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+        <div class="photo-container">
+            <div class="photo-frame">
+                <img src="f/fio 1.png" alt="Fiona Surya Suci Ramadhani" class="profile-photo">
+            </div>
+        </div>
+        <div class="about-text">
+            <h2>Fiona Surya Suci Ramadhani</h2>
+            <p class="jurusan">XI TKJ 1 — Networking Student</p>
+            <p class="tagline">"Exploring networks & building creative tech projects."</p>
+            <div class="minat">
+                <h3>Minat & Passion</h3>
+                <ul>
+                    <li>Jaringan Komputer</li>
+                    <li>Teknologi</li>
+                    <li>Desain</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Halaman Skill -->
+    <section id="skill" class="page">
+        <h2 class="section-title">Skills</h2>
+        <div class="skill-categories">
+            <div class="category" id="hardware">
+                <div class="category-header">
+                    <h3>Hardware</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="skills-list">
+                    <ul>
+                        <li>Router</li>
+                        <li>Kabel UTP (Straight & Cross)</li>
+                        <li>LAN Tester</li>
+                        <li>Crimping Tool</li>
+                        <li>RJ45 Connector</li>
+                        <li>Mikrotik Routerboard</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="category" id="software">
+                <div class="category-header">
+                    <h3>Software</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="skills-list">
+                    <ul>
+                        <li>Windows (10, 11)</li>
+                        <li>Debian</li>
+                        <li>MikroTik RouterOS</li>
+                        <li>VirtualBox</li>
+                        <li>Cisco Packet Tracer</li>
+                        <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+                        <li>Desain Figma dan Canva</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman Sertifikat -->
+    <section id="sertifikat" class="page">
+        <h2 class="section-title">Sertifikat</h2>
+        <div class="certificates">
+            <div class="certificate">
+                <img src="f/fortinet cyber.jpg" alt="Sertifikat 1">
+                <p>2025 - Cybersecurity</p>
+            </div>
+            <div class="certificate">
+                <img src="f/fortinet cyber 02.jpg" alt="Sertifikat 2">
+                <p>2024 - Fortinet Cyber</p>
+            </div>
+            <div class="certificate">
+                <img src="f/fortinet landscape2.jpg" alt="Sertifikat 3">
+                <p>2024 - Treat Landscape</p>
+            </div>
+            <div class="certificate">
+                <img src="f/sertifikat aguna network fundamental.png" alt="Sertifikat 4">
+                <p>2024 - Network Fundamental</p>
+            </div>
+            <div class="certificate">
+                <img src="f/sertifikat aguna vmf.png" alt="Sertifikat 5">
+                <p>2024 - Virtual Machine Fundamental</p>
+            </div>
+            <div class="certificate">
+                <img src="f/sertifikat aguna pnet.jpg" alt="Sertifikat 6">
+                <p>2025 - Simulasi Jaringan PNETLab</p>
+            </div>
+            <div class="certificate">
+                <img src="f/ccna.png" alt="Sertifikat 7">
+                <p>2025 - CCNA </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman Gallery -->
+    <section id="gallery" class="page">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-items">
+            <div class="gallery-item">
+                <img src="f/lms albee tech.jpg" alt="Praktek UTP">
+                <p>Dokumentasi mengerjakan LMS ALBEE TECH</p>
+            </div>
+            <div class="gallery-item">
+                <img src="f/praktek fo.jpg" alt="Konfigurasi Router">
+                <p>Praktek Fiber Optic</p>
+            </div>
+            <div class="gallery-item">
+                <img src="f/praktek merakit rak .jpg" alt="LAN Tester">
+                <p>Merakit rak</p>
+            </div>
+            <div class="gallery-item">
+                <img src="f/random ft1.jpg" alt="Packet Tracer">
+                <p>Random </p>
+            </div>
+            <div class="gallery-item">
+                <img src="f/random ft2.jpg" alt="Crimping Tool">
+                <p>Teman</p>
+            </div>
+            <div class="gallery-item">
+                <img src="f/fio 2.jpg" alt="Server Room">
+                <p>Fiona </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman Contact Me -->
+    <section id="contact" class="page">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+            <div class="social-links">
+                <a href="https://wa.me/6285259946706" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <path fill="currentColor" d="M12.017 2.047c-5.502 0-9.969 4.467-9.969 9.969 0 1.768.464 3.475 1.34 4.99L2.106 21.913l5.197-1.378c1.464.783 3.118 1.217 4.714 1.217 5.502 0 9.969-4.467 9.969-9.969s-4.467-9.969-9.969-9.969zm5.454 13.983c-.147.416-.837.763-1.169.813-.302.044-.684.06-1.093-.067-.281-.087-1.677-.618-2.934-.99-1.581-.47-2.715.538-3.232 1.005-.233.211-.5.313-.776.313-.129 0-.258-.016-.387-.047-.387-.1-.741-.347-.988-.695-.744-.864-.745-2.008-.745-2.064 0-.056.008-.112.023-.167.024-.088.071-.168.131-.232.112-.128.296-.2.48-.2.056 0 .112.008.167.024.24.064.536.232.744.367.208.136.376.256.512.376.335.328.575.688.791 1.088.151.28.271.576.367.864.096.288.167.592.231.888.064.296.104.6.12.904.016.304.024.616.024.928 0 .312-.008.624-.024.928-.016.304-.056.608-.12.904-.064.296-.135.6-.231.888-.096.288-.216.584-.367.864-.216.4-.456.76-.791 1.088-.136.12-.304.24-.512.376-.208.136-.504.304-.744.367-.055.016-.111.024-.167.024-.184 0-.368-.072-.48-.2-.06-.064-.107-.144-.131-.232-.015-.055-.023-.111-.023-.167 0-.056.001-1.2.745-2.064.247-.348.601-.595.988-.695.129-.031.258-.047.387-.047.276 0 .543.102.776.313.517.467 1.651 1.475 3.232 1.005 1.257-.372 2.653-.903 2.934-.99.409-.127.791-.111 1.093-.067.332.05 1.022.397 1.169.813.147.416.119 1.036-.064 1.436-.183.4-.528.888-1.121 1.352-.592.464-1.296.888-2.064 1.216-.768.328-1.592.56-2.432.704-.84.144-1.696.2-2.544.168-.848-.032-1.688-.144-2.512-.336-.824-.192-1.624-.464-2.384-.816-.76-.352-1.472-.784-2.128-1.288-.656-.504-1.248-1.072-1.768-1.704s-.936-1.312-1.232-2.048c-.296-.736-.504-1.504-.616-2.288-.112-.784-.136-1.576-.072-2.36.064-.784.216-1.56.456-2.312.24-.752.568-1.472.976-2.144.408-.672.888-1.288 1.432-1.832.544-.544 1.144-1.008 1.792-1.384.648-.376 1.336-.664 2.048-.856.712-.192 1.44-.288 2.168-.288.728 0 1.456.096 2.168.288.712.192 1.4.48 2.048.856.648.376 1.248.84 1.792 1.384.544.544 1.024 1.16 1.432 1.832.408.672.736 1.392.976 2.144.24.752.392 1.528.456 2.312.064.784.04 1.576-.072 2.36-.112.784-.32 1.552-.616 2.288-.296.736-.688 1.432-1.232 2.048-.544.616-1.112 1.184-1.768 1.704-.656.52-1.368.952-2.128 1.304-.76.352-1.56.624-2.384.816-.824.192-1.664.304-2.512.336-.848.032-1.704-.024-2.544-.168-.84-.144-1.664-.376-2.432-.704-.768-.328-1.472-.752-2.064-1.216-.592-.464-.937-.952-1.12-1.352-.183-.4-.211-1.02-.064-1.436z"/>
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/fiona_surya21?igsh=MWd4dHBpb2I2N2JzMg==" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://github.com/fionasurya" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/fiona" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+               <a href="https://www.google.com/maps/place/SMK+Negeri+1+Nglegok/@-7.860218,112.180731,15z/data=!4m6!3m5!1s0x2e785c1e8e6a2f1b:0x102d0f2a6a9a8a6b!8m2!3d-7.860218!4d112.180731!16s%2Fg%2F1tfz9q_f?entry=ttu" 
+   target="_blank" 
+   class="social-link" 
+   id="location-link">
+    <svg viewBox="0 0 24 24" width="40" height="40">
+        <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+    </svg>
+    <span>Location</span>
+</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman Music -->
+    <section id="music" class="page">
+        <h2 class="section-title">My Favorite Music</h2>
+        <div class="music-player">
+            <div class="album-cover">
+                <img src="f/msc_logo-removebg-preview.png" alt="Album Cover">
+                <div class="album-info">
+                    <h3>LOVE<br>MUSIC</h3>
+                    <h4>MYWORLD</h4>
+                </div>
+            </div>
+            <div class="tracks">
+                <!-- Track 1 - Ganti dengan link Spotify Anda -->
+          <!-- Flashlight - Jessie J -->
+<<!-- Flashlight - Jessie J -->
+<div class="track">
+    <div class="track-info">
+        <h3>Flashlight</h3>
+        <p>Jessie J</p>
+    </div>
+    <iframe src="https://open.spotify.com/embed/track/4rkUEE5iTzG0szS8k8QzqR?utm_source=generator&theme=0" 
+            width="100%" height="80" frameborder="0" allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+</div>
+
+<!-- All Too Well - Taylor Swift -->
+<div class="track">
+    <div class="track-info">
+        <h3>All Too Well</h3>
+        <p>Taylor Swift</p>
+    </div>
+    <iframe src="https://open.spotify.com/embed/track/1IBhYEvvi02tDVByxIiTh4?utm_source=generator&theme=0" 
+            width="100%" height="80" frameborder="0" allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+</div>
+
+<!-- Imagination - Shawn Mendes -->
+<div class="track">
+    <div class="track-info">
+        <h3>Imagination</h3>
+        <p>Shawn Mendes</p>
+    </div>
+    <iframe src="https://open.spotify.com/embed/track/21TcDbGosp7w9YhTjOszgA?utm_source=generator&theme=0" 
+            width="100%" height="80" frameborder="0" allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+</div>
+
+<!-- -->
+<div class="track">
+    <div class="track-info">
+        <h3>About You</h3>
+        <p>The 1975</p>  <!-- Diperbaiki dari The 1978 menjadi The 1975 -->
+    </div>
+    <iframe src="https://open.spotify.com/embed/track/3hEfpBHxgieRLz4t3kLNEg?utm_source=generator&theme=0" 
+            width="100%" height="80" frameborder="0" allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+</div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Fio — Networking Student | SMK 1 Nglegok</p>
+    </footer>
+
+    <script src="f/f.js"></script>
+</body>
+</html>

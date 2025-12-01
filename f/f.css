@@ -1,0 +1,690 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2b1146 0%, #060b13ff 100%);
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Spotify Button */
+.spotify-btn-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+.spotify-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.spotify-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Pages */
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    padding: 100px 20px 60px;
+    overflow-y: auto;
+}
+
+.page.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Home Page */
+.home-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+#typed-text {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    min-height: 80px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #7e52c5, #5c1b81);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* About Page */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+}
+
+/* About Page - Foto Profil */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, #060b13ff, #6A11CB, #122f61);
+    box-shadow: 0 10px 30px rgba(106, 17, 203, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.photo-frame:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(65, 13, 121, 0.6);
+}
+
+.photo-frame::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8A2BE2, #6A11CB, #2575FC, #8A2BE2);
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.photo-frame:hover .profile-photo {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.jurusan {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.minat {
+    margin-top: 30px;
+}
+
+.minat h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.minat ul {
+    list-style: none;
+}
+
+.minat li {
+    padding: 8px 0;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.minat li:before {
+    content: "•";
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* Responsive Design untuk About Page */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .photo-frame {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.jurusan {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.minat {
+    margin-top: 30px;
+}
+
+.minat h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.minat ul {
+    list-style: none;
+}
+
+.minat li {
+    padding: 8px 0;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.minat li:before {
+    content: "•";
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* Skills Page */
+.skill-categories {
+    display: flex;
+    gap: 50px;
+    max-width: 1000px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.category {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 0;
+    width: 500px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.category:hover {
+    box-shadow: 0 15px 30px rgba(106, 17, 203, 0.4);
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.category-header h3 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.toggle-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.category.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.skills-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.category.active .skills-list {
+    max-height: 500px;
+}
+
+.skills-list ul {
+    list-style: none;
+    padding: 0 30px 20px;
+}
+
+.skills-list li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+
+.category.active .skills-list li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category.active .skills-list li:nth-child(1) { transition-delay: 0.1s; }
+.category.active .skills-list li:nth-child(2) { transition-delay: 0.2s; }
+.category.active .skills-list li:nth-child(3) { transition-delay: 0.3s; }
+.category.active .skills-list li:nth-child(4) { transition-delay: 0.4s; }
+.category.active .skills-list li:nth-child(5) { transition-delay: 0.5s; }
+.category.active .skills-list li:nth-child(6) { transition-delay: 0.6s; }
+.category.active .skills-list li:nth-child(7) { transition-delay: 0.7s; }
+
+/* Certificates Page */
+.certificates {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.certificate {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certificate:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.certificate img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.certificate p {
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Gallery Page */
+.gallery-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+}
+
+.gallery-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-item p {
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Contact Page */
+.contact-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    width: 120px;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.social-link span {
+    font-weight: 500;
+}
+
+/* Music Page */
+.music-player {
+    display: flex;
+    gap: 50px;
+    max-width: 1000px;
+    align-items: flex-start;
+}
+
+.album-cover {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.album-cover img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.album-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.album-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff6b6b;
+}
+
+.album-info p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.tracks {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.track {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.track:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.track-info p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.spotify-embed {
+    flex: 1;
+    max-width: 300px;
+    border-radius: 12px;
+    border: none;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 90;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .navbar ul {
+        gap: 10px;
+    }
+    
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    #typed-text {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .skill-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .category {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+    
+    .social-link {
+        width: 100px;
+        padding: 15px 10px;
+    }
+    
+    .music-player {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .album-cover {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .track {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .spotify-embed {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
