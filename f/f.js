@@ -83,20 +83,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     const pages = document.querySelectorAll('.page');
 
+    // Function to navigate to page
+    function navigateToPage(pageId) {
+        // Remove active class from all pages and nav links
+        pages.forEach(page => page.classList.remove('active'));
+        navLinks.forEach(link => link.classList.remove('active'));
+
+        // Add active class to target page
+        document.getElementById(pageId).classList.add('active');
+        
+        // Add active class to corresponding nav link
+        const correspondingLink = document.querySelector(`.nav-link[href="#${pageId}"]`);
+        if (correspondingLink) {
+            correspondingLink.classList.add('active');
+        }
+    }
+
+    // Add click event to all nav links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Remove active class from all links and pages
-            navLinks.forEach(l => l.classList.remove('active'));
-            pages.forEach(page => page.classList.remove('active'));
-
-            // Add active class to clicked link
-            this.classList.add('active');
-
-            // Show corresponding page
             const targetId = this.getAttribute('href').substring(1);
-            document.getElementById(targetId).classList.add('active');
+            navigateToPage(targetId);
+            
+            // Close mobile menu if open
+            closeMobileMenu();
         });
     });
 
@@ -105,12 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const musicPage = document.getElementById('music');
 
     spotifyBtn.addEventListener('click', function() {
-        // Hide all pages and remove active class from all nav links
-        pages.forEach(page => page.classList.remove('active'));
-        navLinks.forEach(link => link.classList.remove('active'));
-
-        // Show music page
-        musicPage.classList.add('active');
+        navigateToPage('music');
+        closeMobileMenu();
     });
 
     // Skill Categories Accordion
@@ -124,13 +132,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-// Jika ingin menampilkan alert dan tetap membuka maps
-const locationLink = document.getElementById('location-link');
-locationLink.addEventListener('click', function(e) {
-    // Tidak menggunakan preventDefault(), jadi link tetap terbuka
-    alert('Lokasi: SMK 1 Nglegok - Jl. Raya Nglegok No.1, Nglegok, Kec. Nglegok, Kabupaten Blitar, Jawa Timur 66181');
-    // Biarkan link terbuka secara normal
-});
+    // Hamburger Menu for Mobile
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('nav-menu-mobile');
+
+    function toggleMobileMenu() {
+        mobileMenu.classList.toggle('active');
+        // Animate hamburger bars
+        hamburger.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleMobileMenu();
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close mobile menu on window resize (if resized to desktop)
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
+    });
+
     // Initialize first page
     document.getElementById('home').classList.add('active');
 });
